@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/entryform}"
+      th:object="${newReddit}"
+      method="post">
+    <input type="hidden" th:field="*{id}"  />
+    <h4>  Name</h4> <input type="text"  th:field="*{name}"  />
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}"></span><br />
+
+
+    <h4> Title</h4><input type="text" th:field="*{title}" />
+    <span th:if="${#fields.hasErrors('title')}"
+          th:errors="*{title}"></span><br />
+
+
+    <h4> Hyperlink</h4><input type="text"  th:href="*{hyperlink}" />
+    <span th:if="${#fields.hasErrors('hyperlink')}"
+          th:errors="*{hyperlink}"></span><br />
+
+    <br />
+    <input type="submit" value="Submit"  />
+</form>
+</body>
+</html>
