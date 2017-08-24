@@ -1,0 +1,110 @@
+@import "compass/css3";
+
+
+$neonYellow  : #FFFB00;
+$neonRed     : #FF1168;
+$neonTeal    : #1FFFD6;
+$neonBlue    : #00AAFF;
+
+html{
+    background:black;
+}
+
+.profile{
+    margin-top:9px;
+    margin-left:8px;
+    width:25px;
+    height:25px;
+    fill:#3b4148;
+}
+
+input:focus{
+    outline: 2px solid #0099cc;
+}
+
+#form-container{
+    float:left;
+    width:30%;
+    min-width:400px;
+    margin-top:25px;
+    margin-left:calc(50% - 200px);
+    margin-left:-webkit-calc(50% - 200px);
+    margin-left:-moz-calc(50% - 200px);
+    background:#2C312F;
+}
+
+section {
+@include background-image(
+linear-gradient(
+left top,
+$neonTeal 0%,
+$neonYellow 25%,
+$neonRed 75%,
+$neonBlue 100%
+));
+    width:100%;
+    height:7px;
+    float:left;
+}
+
+#name, #password{
+    float:left;
+    width:80%;
+    margin:5% 5% 0 0;
+    padding:13px 10px;
+    font-size:1em;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    background-color: #3b4148;
+    border:0;
+    color: #606468;
+}
+
+#password{
+    margin-top:2%;
+    margin-bottom:5%;
+    width:68%;
+    margin-right:0;
+}
+
+.arrow{
+    position:absolute;
+    margin-top:90px;
+    margin-left:14px;
+    width:25px;
+    height:25px;
+    fill:#3b4148;
+    pointer-events: none;
+}
+
+#submit{
+    margin-top:2%;
+    margin-left:0;
+    width:12%;
+    height:44px;
+    background-color:grey;
+    border:0;
+}
+
+#submit:hover{
+    background-color:#0099cc;
+}
+
+.box1, .box2{
+    background:grey;
+    margin-top:5%;
+    margin-left:5%;
+    height:44px;
+    width:10%;
+    display: block;
+    line-height: 20px;
+    float:left;
+}
+
+.box2{
+    margin-top:2%;
+}
+
+@media only screen and (max-width: 400px) {
+    margin-left:35%;
+}

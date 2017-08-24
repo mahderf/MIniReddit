@@ -1,110 +1,102 @@
-@import "compass/css3";
-
-
-$neonYellow  : #FFFB00;
-$neonRed     : #FF1168;
-$neonTeal    : #1FFFD6;
-$neonBlue    : #00AAFF;
-
-html{
-    background:black;
+body{
+    background: url(http://mymaplist.com/img/parallax/back.png);
+    background-color: #444;
+    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);
 }
 
-.profile{
-    margin-top:9px;
-    margin-left:8px;
-    width:25px;
-    height:25px;
-    fill:#3b4148;
+.panel {
+    background: white transparent;
+    background: rgba(255, 255, 255, 0.8);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FFFFFF, endColorstr=#99FFFFFF)";
+}
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-input:focus{
-    outline: 2px solid #0099cc;
+
+
+/* -- make sure to declare a default for every property that you want animated -- */
+/* -- general styles, including Y axis rotation -- */
+.flipeffect .front {
+
+    z-index: 900;
+    width: inherit;
+    height: inherit;
+
+
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.flipeffect.flip .front {
+    z-index: 900;
+
+
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+
+    -moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 }
 
-#form-container{
-    float:left;
-    width:30%;
-    min-width:400px;
-    margin-top:25px;
-    margin-left:calc(50% - 200px);
-    margin-left:-webkit-calc(50% - 200px);
-    margin-left:-moz-calc(50% - 200px);
-    background:#2C312F;
+.flipeffect .back {
+    margin-bottom: 20px;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    z-index: 800;
+    -webkit-transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    -moz-transform: rotateY(-180deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
-section {
-@include background-image(
-linear-gradient(
-left top,
-$neonTeal 0%,
-$neonYellow 25%,
-$neonRed 75%,
-$neonBlue 100%
-));
-    width:100%;
-    height:7px;
-    float:left;
+.flipeffect.flip .back {
+    z-index: 1000;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
 }
-
-#name, #password{
-    float:left;
-    width:80%;
-    margin:5% 5% 0 0;
-    padding:13px 10px;
-    font-size:1em;
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    background-color: #3b4148;
-    border:0;
-    color: #606468;
-}
-
-#password{
-    margin-top:2%;
-    margin-bottom:5%;
-    width:68%;
-    margin-right:0;
-}
-
-.arrow{
-    position:absolute;
-    margin-top:90px;
-    margin-left:14px;
-    width:25px;
-    height:25px;
-    fill:#3b4148;
-    pointer-events: none;
-}
-
-#submit{
-    margin-top:2%;
-    margin-left:0;
-    width:12%;
-    height:44px;
-    background-color:grey;
-    border:0;
-}
-
-#submit:hover{
-    background-color:#0099cc;
-}
-
-.box1, .box2{
-    background:grey;
-    margin-top:5%;
-    margin-left:5%;
-    height:44px;
-    width:10%;
-    display: block;
-    line-height: 20px;
-    float:left;
-}
-
-.box2{
-    margin-top:2%;
-}
-
-@media only screen and (max-width: 400px) {
-    margin-left:35%;
-}
+	
