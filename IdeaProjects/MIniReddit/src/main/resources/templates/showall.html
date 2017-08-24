@@ -5,32 +5,29 @@
     <title>Title</title>
 </head>
 <body>
-<table>
+<!--<table>-->
 
-    <tr>
-        <td><p> Name</p></td>
-        <td><p>title</p></td>
-        <td><p>link</p></td>
-        <td><p>date</p></td>
+    <!--<tr>-->
+        <!--<td><p> Name</p></td>-->
+        <!--<td><p>title</p></td>-->
+        <!--<td><p>link</p></td>-->
+        <!--<td><p>date</p></td>-->
 
-    </tr>
+    <!--</tr>-->
+<h2>Project Reddit</h2><h2>Add Link </h2><h2>Login</h2>
+------------------------------------------------------
+    <div th:each="redobject:${redobj}">
+
+        <a th:href="@{${redobject.hyperlink}}">
+                    <p th:text="${redobject.title}"></p>
+        </a>
+        <p th:text="'Submitted by :'+${redobject.name}"> </p>
+
+        <p th:text="${{redobject.date}}"/>
 
 
-    <th:block th:each="redobject:${redobj}">
-        <tr>
-            <td><p th:text="${redobject.name}"/></td>
-            <td><p th:text="${redobject.title}"/></td>
 
-            <td>
-            <a th:href="@{${redobject.hyperlink}}">
-                <p th:text="${redobject.hyperlink}"></p>
-            </a>
-
-            </td>
-            <td><p th:text="${redobject.date}"/> </td>
-
-        </tr>
-    </th:block>
-</table>
+    </div>
+<!--</table>-->
 </body>
 </html>

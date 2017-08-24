@@ -20,7 +20,7 @@
           th:errors="*{title}"></span><br />
 
 
-    <h4> Hyperlink</h4><input type="text"  th:href="*{hyperlink}" />
+    <h4> Hyperlink</h4><input type="text"  th:field="*{hyperlink}" />
     <span th:if="${#fields.hasErrors('hyperlink')}"
           th:errors="*{hyperlink}"></span><br />
 
